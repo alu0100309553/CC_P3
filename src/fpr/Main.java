@@ -1,37 +1,43 @@
 package fpr;
+/*
+ * Author: Rubén Labrador Páez.
+ * Email: alu0100309553@ull.edu.es
+ * Tit: Grado Ingeniería Informática - Universidad de La Laguna
+ * Course: 4 - Computación
+ * Subject: Complejidad Computacional
+ * Practice: 3
+ * Class/Program: Funciones primitivas recursivas
+ * File: Main.java
+ * Description: Programa que implementa operación como Funciones Primitivas Recursivas
+ * @author Rubén Labrador Páez
+ * @version 1.0.0 2/11/2016
+ **/
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
-  public static void main(String[] args) {
-    FPR prueba = new FPR();
-    System.out.println(prueba.pot(3, 2));
-    System.out.println(prueba.suma3(2, 2, 2));
-    System.out.println(prueba.fact(4));
-    System.out.println(prueba.not(4));
-    System.out.println(prueba.not(0));
-    System.out.println(prueba.pred(9));
-    System.out.println(prueba.dif(8, 7));
-    System.out.println(prueba.menor(8, 8));
-    System.out.println(prueba.difabs(10, 8));
-    System.out.println(prueba.difabs(8, 10));
-    System.out.println(prueba.igual(8, 8));
-    System.out.println(prueba.igual(8, 10));
-    System.out.println(prueba.menorigual(8, 8));
-    System.out.println(prueba.menorigual(8, 10));
-    System.out.println(prueba.menorigual(11, 10));
-    System.out.println(prueba.mayor(8, 8));
-    System.out.println(prueba.mayor(8, 10));
-    System.out.println(prueba.mayor(11, 10));
-    System.out.println(prueba.max(11, 11));
-    System.out.println(prueba.max(3, 3));
-    System.out.println(prueba.min(11, 10));
-    System.out.println(prueba.min(10, 10));
-    System.out.println(prueba.f1(10, 10));
-    System.out.println(prueba.f1(8, 10));
-    System.out.println(prueba.f1(10, 8));
-    
-    // TODO Auto-generated method stub
-
-  }
-
+	public static void main(String[] args) {
+		FPR prueba = new FPR();
+		int x = 0;
+		int y = 0;
+		if (args.length < 2){
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			try {
+				System.out.println("Intruduzca valor para la base:");
+				x = Integer.parseInt(br.readLine());
+				System.out.println("Intruduzca valor para el exponente:");
+				y = Integer.parseInt(br.readLine());
+			} catch (NumberFormatException | IOException e) {
+				System.err.println("Error: Parámetros incorrectos");
+				System.exit(1);
+				e.printStackTrace();
+			}
+		}else {
+			x = Integer.parseInt(args[0]);
+			y = Integer.parseInt(args[1]);
+		}
+		System.out.println(prueba.pot(x, y));
+	}
 }
