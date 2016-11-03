@@ -39,7 +39,8 @@ public class FPR {
 		if (y == 0){
 			return x;
 		}  else {
-			return s(suma(x, y-1));
+			int [] operacion = {x, y-1, suma (x, y-1)};
+			return s(p(3, operacion));
 		}
 	}
 
@@ -69,7 +70,8 @@ public class FPR {
 		if (z == 0){
 			return suma (x, y);
 		}  else {
-			return s(suma3(x, y, z-1));
+			int [] operacion = {x, y, z-1, suma3(x, y, z-1)};
+			return s(p(4, operacion));
 		}
 	}
 
